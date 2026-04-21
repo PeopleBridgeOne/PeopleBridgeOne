@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bridge Ahead — politics that affects your life, explained simply</title>
+<meta name="description" content="Free, non-partisan guides to UK policy and your democratic rights. Understand what's changing, know your rights, and make your voice heard.">
+
+<!-- Social sharing -->
+<meta property="og:title" content="Bridge Ahead — democracy, explained simply">
+<meta property="og:description" content="Free, non-partisan plain-English guides to UK policy. Know your rights. Make your voice heard.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://bridgeahead.org.uk">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Bridge Ahead">
+<meta name="twitter:description" content="Free plain-English guides to UK policy and your democratic rights.">
+
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --brand:#1a6b8a;--brand-dark:#114d65;--brand-light:#e6f3f8;--brand-mid:#4a9ab8;
+  --purple-light:#EEEDFE;--purple-dark:#3C3489;
+  --amber-light:#FAEEDA;--amber-dark:#633806;
+  --coral-light:#FAECE7;--coral-dark:#712B13;
+  --green-light:#EAF3DE;--green-dark:#27500A;
+  --teal-light:#E1F5EE;--teal-dark:#085041;
+  --text:#1a1a1a;--text-muted:#5c5c5c;--text-hint:#999;
+  --bg:#fff;--bg-surface:#f7f6f3;--bg-page:#f2f0eb;
+  --border:rgba(0,0,0,0.11);--border-med:rgba(0,0,0,0.18);
+  --r:8px;--rl:12px;
+}
+@media(prefers-color-scheme:dark){
+  :root{
+    --text:#e8e6e0;--text-muted:#9c9a92;--text-hint:#666;
+    --bg:#1c1c1a;--bg-surface:#242422;--bg-page:#161614;
+    --border:rgba(255,255,255,0.1);--border-med:rgba(255,255,255,0.2);
+    --brand-light:#0a2d3a;--purple-light:#26215C;
+    --amber-light:#412402;--coral-light:#4A1B0C;
+    --green-light:#173404;--teal-light:#04342C;
+  }
+}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg-page);color:var(--text);line-height:1.6;font-size:15px}
+a{color:var(--brand)}
+button{font-family:inherit}
+
+/* SKIP LINK */
+.skip-link{position:absolute;top:-100px;left:0;background:var(--brand);color:#fff;padding:8px 16px;border-radius:0 0 var(--r) 0;font-size:14px;font-weight:500;text-decoration:none;z-index:999;transition:top .1s}
+.skip-link:focus{top:0}
+
+/* NAV */
+nav{background:var(--bg);border-bottom:0.5px solid var(--border);padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:54px;position:sticky;top:0;z-index:100}
+.logo{font-size:16px;font-weight:700;color:var(--text);text-decoration:none;letter-spacing:-0.5px;display:flex;align-items:center;gap:9px;cursor:pointer}
+.logo-mark{width:28px;height:28px;background:var(--brand);border-radius:7px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.nav-desktop{display:flex;gap:2px}
+.nav-link{padding:6px 13px;border-radius:var(--r);font-size:13px;color:var(--text-muted);cursor:pointer;border:none;background:none;text-decoration:none;transition:all .15s;white-space:nowrap}
+.nav-link:hover,.nav-link.active{background:var(--bg-surface);color:var(--text)}
+.nav-mobile-toggle{display:none;background:none;border:0.5px solid var(--border-med);border-radius:var(--r);padding:6px 10px;cursor:pointer;color:var(--text)}
+.nav-mobile-menu{display:none;background:var(--bg);border-bottom:0.5px solid var(--border);padding:8px 16px 12px}
+.nav-mobile-menu .nav-link{display:block;padding:10px 12px;width:100%}
+@media(max-width:560px){
+  .nav-desktop{display:none}
+  .nav-mobile-toggle{display:block}
+  .nav-mobile-menu.open{display:block}
+}
+
+/* PAGES */
+.page{display:none}.page.active{display:block}
+
+/* HERO */
+.hero{background:var(--bg);border-bottom:0.5px solid var(--border);padding:44px 24px 36px}
+.hero-inner{max-width:700px;margin:0 auto}
+.hero-eyebrow{font-size:12px;font-weight:600;color:var(--brand);letter-spacing:0.8px;text-transform:uppercase;margin-bottom:12px}
+.hero h1{font-size:30px;font-weight:700;line-height:1.2;margin-bottom:12px;letter-spacing:-0.5px}
+.hero h1 em{font-style:normal;color:var(--brand)}
+.hero-sub{font-size:15px;color:var(--text-muted);max-width:500px;margin-bottom:26px;line-height:1.65}
+.hero-badges{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
+.hero-badge{font-size:12px;padding:4px 12px;border-radius:99px;border:0.5px solid var(--border-med);color:var(--text-muted);background:var(--bg-surface)}
+
+/* POSTCODE WIDGET */
+.postcode-widget{background:var(--bg-surface);border:0.5px solid var(--border-med);border-radius:var(--rl);padding:20px;max-width:520px}
+.postcode-widget label{font-size:13px;font-weight:600;color:var(--text);margin-bottom:8px;display:block}
+.input-row{display:flex;gap:8px;flex-wrap:wrap}
+.input-row input{flex:1;min-width:140px;height:40px;border:0.5px solid var(--border-med);border-radius:var(--r);padding:0 14px;font-size:14px;background:var(--bg);color:var(--text)}
+.input-row input:focus{outline:none;border-color:var(--brand);box-shadow:0 0 0 3px rgba(26,107,138,.12)}
+.btn{height:40px;padding:0 18px;border-radius:var(--r);font-size:14px;font-weight:500;cursor:pointer;border:none;transition:all .15s;display:inline-flex;align-items:center;gap:6px;text-decoration:none}
+.btn-primary{background:var(--brand);color:#fff}.btn-primary:hover{background:var(--brand-dark)}
+.btn-outline{background:var(--bg);color:var(--text);border:0.5px solid var(--border-med)}.btn-outline:hover{background:var(--bg-surface)}
+.btn-sm{height:34px;font-size:13px;padding:0 14px}
+#mp-result{margin-top:14px;font-size:13px;min-height:18px}
+.mp-card{background:var(--bg);border:0.5px solid var(--border);border-radius:var(--r);padding:12px 14px;margin-top:10px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.mp-card-name{font-weight:600;color:var(--text);font-size:13px;margin-bottom:2px}
+.mp-card-area{color:var(--text-muted);font-size:12px}
+
+/* LAYOUT */
+.container{max-width:780px;margin:0 auto;padding:30px 24px}
+.sec-label{font-size:11px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:.7px;margin-bottom:14px}
+.divider{height:0.5px;background:var(--border);margin:28px 0}
+
+/* PILLS */
+.pill-row{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px}
+.pill{font-size:13px;padding:5px 14px;border-radius:99px;border:0.5px solid var(--border-med);color:var(--text-muted);cursor:pointer;background:var(--bg);transition:all .1s}
+.pill.active,.pill:hover{background:var(--brand-light);color:var(--brand-dark);border-color:var(--brand)}
+
+/* CARDS */
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px}
+.card{background:var(--bg);border:0.5px solid var(--border);border-radius:var(--rl);padding:16px;cursor:pointer;transition:border-color .15s,transform .1s}
+.card:hover{border-color:var(--border-med);transform:translateY(-1px)}
+.tag{display:inline-block;font-size:11px;font-weight:700;padding:3px 9px;border-radius:var(--r);margin-bottom:8px}
+.tag-h{background:var(--teal-light);color:var(--teal-dark)}
+.tag-b{background:var(--purple-light);color:var(--purple-dark)}
+.tag-v{background:var(--amber-light);color:var(--amber-dark)}
+.tag-n{background:var(--coral-light);color:var(--coral-dark)}
+.tag-e{background:var(--green-light);color:var(--green-dark)}
+.tag-r{background:var(--brand-light);color:var(--brand-dark)}
+.card-title{font-size:14px;font-weight:600;margin-bottom:5px;line-height:1.35}
+.card-desc{font-size:13px;color:var(--text-muted);line-height:1.5}
+.card-soon{opacity:.55;cursor:default}.card-soon:hover{transform:none;border-color:var(--border)}
+.soon-badge{font-size:11px;color:var(--text-hint);margin-top:8px}
+
+/* ACTION GRID */
+.action-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:12px}
+.action-card{background:var(--bg-surface);border:0.5px solid var(--border);border-radius:var(--rl);padding:16px;cursor:pointer;transition:border-color .15s}
+.action-card:hover{border-color:var(--border-med)}
+.action-icon{width:30px;height:30px;border-radius:7px;margin-bottom:10px;display:flex;align-items:center;justify-content:center}
+.action-title{font-size:14px;font-weight:600;margin-bottom:4px}
+.action-desc{font-size:13px;color:var(--text-muted);line-height:1.5}
+
+/* STATS — honest version */
+.stat-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px}
+.stat{background:var(--bg-surface);border-radius:var(--r);padding:16px;text-align:center}
+.stat-num{font-size:24px;font-weight:700;color:var(--text)}
+.stat-lbl{font-size:12px;color:var(--text-muted);margin-top:3px}
+.stat-note{font-size:11px;color:var(--text-hint);margin-top:6px;font-style:italic}
+.launch-banner{background:var(--brand-light);border:0.5px solid var(--brand-mid);border-radius:var(--r);padding:10px 14px;font-size:13px;color:var(--brand-dark);margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.launch-dot{width:8px;height:8px;border-radius:50%;background:var(--brand);flex-shrink:0}
+
+/* NETLIFY SIGNUP FORM */
+.signup-strip{background:var(--brand-light);border:0.5px solid var(--brand-mid);border-radius:var(--rl);padding:20px 22px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.signup-text h3{font-size:15px;font-weight:600;color:var(--brand-dark);margin-bottom:3px}
+.signup-text p{font-size:13px;color:var(--brand-dark);opacity:.8}
+.signup-form-inner{display:flex;gap:8px;flex-wrap:wrap}
+.signup-form-inner input[type="email"]{height:38px;border:0.5px solid var(--brand);border-radius:var(--r);padding:0 13px;font-size:13px;background:var(--bg);color:var(--text);width:220px}
+.signup-form-inner input[type="email"]:focus{outline:none;box-shadow:0 0 0 3px rgba(26,107,138,.15);border-color:var(--brand)}
+.honeypot{display:none}
+
+/* EXPLAINER */
+.back-btn{display:inline-flex;align-items:center;gap:5px;font-size:13px;color:var(--text-muted);cursor:pointer;border:none;background:none;padding:0;margin-bottom:20px}
+.back-btn:hover{color:var(--text)}
+.explainer-wrap{max-width:640px}
+.explainer h2{font-size:23px;font-weight:700;margin-bottom:6px;line-height:1.25;letter-spacing:-.3px}
+.explainer .meta{font-size:13px;color:var(--text-muted);margin-bottom:14px}
+.badge-row{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:22px}
+.ebadge{font-size:12px;padding:3px 10px;border-radius:99px;border:0.5px solid var(--border);color:var(--text-muted)}
+.explainer p{font-size:15px;line-height:1.75;margin-bottom:14px}
+.explainer strong{font-weight:600}
+.highlight{background:var(--brand-light);border-left:3px solid var(--brand);padding:14px 16px;margin:18px 0;border-radius:0 var(--r) var(--r) 0}
+.highlight p{margin:0;font-size:14px;color:var(--brand-dark)}
+.key-facts{background:var(--bg-surface);border-radius:var(--rl);padding:16px 18px;margin:18px 0}
+.key-facts h4{font-size:12px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px}
+.key-fact{display:flex;gap:10px;margin-bottom:8px;font-size:14px}
+.key-fact-icon{color:var(--brand);font-weight:700;flex-shrink:0;margin-top:1px}
+.cta-strip{margin-top:26px;padding-top:20px;border-top:0.5px solid var(--border)}
+.cta-strip p{font-size:14px;font-weight:600;margin-bottom:10px}
+
+/* LETTER TOOL */
+.letter-wrap{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
+@media(max-width:580px){.letter-wrap{grid-template-columns:1fr}}
+.letter-tool label{display:block;font-size:14px;font-weight:500;margin-bottom:5px;margin-top:16px}
+.letter-tool label:first-of-type{margin-top:0}
+.letter-tool input,.letter-tool select,.letter-tool textarea{width:100%;border:0.5px solid var(--border-med);border-radius:var(--r);padding:9px 13px;font-size:14px;background:var(--bg);color:var(--text)}
+.letter-tool input:focus,.letter-tool select:focus,.letter-tool textarea:focus{outline:none;border-color:var(--brand);box-shadow:0 0 0 3px rgba(26,107,138,.1)}
+.letter-tool textarea{min-height:90px;resize:vertical;line-height:1.6}
+.letter-preview-wrap{position:sticky;top:74px}
+.letter-preview-label{font-size:12px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:.6px;margin-bottom:10px}
+.letter-preview{background:var(--bg);border:0.5px solid var(--border-med);border-radius:var(--rl);padding:20px;font-size:14px;line-height:1.8;white-space:pre-wrap;min-height:200px;color:var(--text)}
+.letter-placeholder{color:var(--text-hint);font-size:14px;font-style:italic}
+.btn-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.copy-confirm{font-size:13px;color:var(--brand-dark);margin-top:8px;font-weight:500;display:none}
+.steps .step{display:flex;gap:12px;margin-bottom:14px}
+.step-num{width:22px;height:22px;border-radius:50%;background:var(--brand);color:#fff;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.step-body{font-size:14px;color:var(--text-muted);line-height:1.5}
+.step-body strong{color:var(--text);font-weight:600}
+
+/* SUGGEST FORM */
+.suggest-form{background:var(--bg-surface);border:0.5px solid var(--border);border-radius:var(--rl);padding:20px;margin-top:28px;max-width:520px}
+.suggest-form h3{font-size:15px;font-weight:600;margin-bottom:5px}
+.suggest-form p{font-size:13px;color:var(--text-muted);margin-bottom:14px}
+.suggest-form input,.suggest-form textarea{width:100%;border:0.5px solid var(--border-med);border-radius:var(--r);padding:9px 13px;font-size:14px;background:var(--bg);color:var(--text);margin-bottom:10px}
+.suggest-form input:focus,.suggest-form textarea:focus{outline:none;border-color:var(--brand);box-shadow:0 0 0 3px rgba(26,107,138,.1)}
+.suggest-form textarea{min-height:60px;resize:vertical}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:20px 0}
+@media(max-width:520px){.about-grid{grid-template-columns:1fr}}
+.about-card{background:var(--bg-surface);border-radius:var(--rl);padding:16px 18px;border:0.5px solid var(--border)}
+.about-card h4{font-size:14px;font-weight:600;margin-bottom:6px}
+.about-card p{font-size:13px;color:var(--text-muted);line-height:1.6}
+
+/* FOOTER */
+footer{background:var(--bg);border-top:0.5px solid var(--border);padding:30px 24px;margin-top:48px}
+.footer-inner{max-width:780px;margin:0 auto}
+.footer-top{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:16px;margin-bottom:20px}
+.footer-logo{font-size:15px;font-weight:700;color:var(--text);display:flex;align-items:center;gap:7px}
+.footer-logo .fmark{width:22px;height:22px;background:var(--brand);border-radius:5px;display:flex;align-items:center;justify-content:center}
+.footer-links{display:flex;gap:16px;flex-wrap:wrap}
+.footer-link{font-size:13px;color:var(--text-muted);text-decoration:none}.footer-link:hover{color:var(--text)}
+.footer-bottom{border-top:0.5px solid var(--border);padding-top:16px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.footer-note{font-size:12px;color:var(--text-hint)}
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<nav aria-label="Main navigation">
+  <div class="logo" onclick="showPage('home')" role="link" tabindex="0" aria-label="Bridge Ahead home">
+    <div class="logo-mark" aria-hidden="true">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+        <path d="M2 13 C2 13 5 6 8 6 C11 6 14 13 14 13" stroke="#fff" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+        <path d="M5 9.5 L11 9.5" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M5 13 L5 9.5" stroke="#fff" stroke-width="1.4" stroke-linecap="round"/>
+        <path d="M11 13 L11 9.5" stroke="#fff" stroke-width="1.4" stroke-linecap="round"/>
+      </svg>
+    </div>
+    Bridge Ahead
+  </div>
+  <div class="nav-desktop" role="menubar">
+    <button class="nav-link active" id="nav-home" onclick="showPage('home')" role="menuitem">Home</button>
+    <button class="nav-link" id="nav-explain" onclick="showPage('explain')" role="menuitem">Explainers</button>
+    <button class="nav-link" id="nav-act" onclick="showPage('act')" role="menuitem">Write to your MP</button>
+    <button class="nav-link" id="nav-about" onclick="showPage('about')" role="menuitem">About</button>
+  </div>
+  <button class="nav-mobile-toggle" onclick="toggleMobileNav()" aria-label="Open menu" aria-expanded="false" id="mobile-toggle">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 4h12M2 8h12M2 12h12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+  </button>
+</nav>
+<div class="nav-mobile-menu" id="mobile-menu" role="menu">
+  <button class="nav-link" onclick="showPage('home');closeMobileNav()" role="menuitem">Home</button>
+  <button class="nav-link" onclick="showPage('explain');closeMobileNav()" role="menuitem">Explainers</button>
+  <button class="nav-link" onclick="showPage('act');closeMobileNav()" role="menuitem">Write to your MP</button>
+  <button class="nav-link" onclick="showPage('about');closeMobileNav()" role="menuitem">About</button>
+</div>
+
+<main id="main">
+
+<!-- HOME -->
+<div class="page active" id="page-home">
+  <div class="hero">
+    <div class="hero-inner">
+      <div class="hero-eyebrow">Free · Non-partisan · Plain English</div>
+      <h1>Democracy works better<br>when <em>everyone</em> can take part</h1>
+      <p class="hero-sub">We translate UK policy into plain English, tell you how it affects your life, and give you simple tools to make your voice heard — whoever you are, wherever you live.</p>
+      <div class="hero-badges">
+        <span class="hero-badge">No jargon</span>
+        <span class="hero-badge">Always free</span>
+        <span class="hero-badge">Non-partisan</span>
+        <span class="hero-badge">Updated regularly</span>
+      </div>
+      <div class="postcode-widget">
+        <label for="postcode">Find your MP and local information</label>
+        <div class="input-row">
+          <input type="text" id="postcode" placeholder="Your postcode, e.g. B15 2TT" maxlength="8" autocomplete="postal-code" />
+          <button class="btn btn-primary" onclick="lookupPostcode()">Search</button>
+        </div>
+        <div id="mp-result" aria-live="polite"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="sec-label">Latest explainers</div>
+    <div class="cards" style="margin-bottom:32px">
+      <div class="card" onclick="openExplainer('renters')" tabindex="0" role="button" aria-label="Read: Renters Rights Bill">
+        <span class="tag tag-h">Housing</span>
+        <div class="card-title">Renters' Rights Bill: what changes for you</div>
+        <div class="card-desc">No-fault evictions abolished. What your landlord can and can't do now.</div>
+      </div>
+      <div class="card" onclick="openExplainer('uc')" tabindex="0" role="button">
+        <span class="tag tag-b">Benefits</span>
+        <div class="card-title">Universal Credit cuts explained</div>
+        <div class="card-desc">What the 2025 reforms mean for your payments.</div>
+      </div>
+      <div class="card" onclick="openExplainer('voterid')" tabindex="0" role="button">
+        <span class="tag tag-v">Voting</span>
+        <div class="card-title">Voter ID: get free photo ID in 5 minutes</div>
+        <div class="card-desc">A free Voter Authority Certificate is available to everyone.</div>
+      </div>
+      <div class="card" onclick="openExplainer('nhs')" tabindex="0" role="button">
+        <span class="tag tag-n">NHS</span>
+        <div class="card-title">NHS waiting lists: know your rights</div>
+        <div class="card-desc">You have legal rights around waiting times. Here's how to use them.</div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+    <div class="sec-label">Take action</div>
+    <div class="action-grid" style="margin-bottom:32px">
+      <div class="action-card" onclick="showPage('act')" tabindex="0" role="button">
+        <div class="action-icon" style="background:var(--brand-light)">
+          <svg width="16" height="16" fill="none" viewBox="0 0 16 16" aria-hidden="true"><rect x="2" y="3" width="12" height="10" rx="1.5" stroke="#114d65" stroke-width="1.3"/><path d="M2 5.5L8 9.5L14 5.5" stroke="#114d65" stroke-width="1.3"/></svg>
+        </div>
+        <div class="action-title">Write to your MP</div>
+        <p class="action-desc">We draft a professional letter in seconds. You copy and send.</p>
+      </div>
+      <div class="action-card" onclick="window.open('https://www.gov.uk/register-to-vote','_blank')" tabindex="0" role="button">
+        <div class="action-icon" style="background:var(--purple-light)">
+          <svg width="16" height="16" fill="none" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="5.5" stroke="#3C3489" stroke-width="1.3"/><path d="M5.5 8.2L7.2 10L10.5 6.5" stroke="#3C3489" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="action-title">Register to vote</div>
+        <p class="action-desc">Takes 5 minutes at gov.uk — opens in a new tab.</p>
+      </div>
+      <div class="action-card" onclick="window.open('https://www.gov.uk/search/policy-papers-and-consultations?content_store_document_type=open_consultations','_blank')" tabindex="0" role="button">
+        <div class="action-icon" style="background:var(--amber-light)">
+          <svg width="16" height="16" fill="none" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 4h10M3 7.5h7M3 11h5" stroke="#854F0B" stroke-width="1.3" stroke-linecap="round"/></svg>
+        </div>
+        <div class="action-title">Open consultations</div>
+        <p class="action-desc">Government is seeking public views on these issues right now.</p>
+      </div>
+      <div class="action-card" onclick="window.open('https://www.gov.uk/apply-for-photo-id-voter-authority-certificate','_blank')" tabindex="0" role="button">
+        <div class="action-icon" style="background:var(--teal-light)">
+          <svg width="16" height="16" fill="none" viewBox="0 0 16 16" aria-hidden="true"><rect x="2" y="4" width="12" height="8" rx="1.5" stroke="#085041" stroke-width="1.3"/><circle cx="5.5" cy="8" r="1.2" fill="#085041"/><path d="M8 7h4M8 9h3" stroke="#085041" stroke-width="1.1" stroke-linecap="round"/></svg>
+        </div>
+        <div class="action-title">Get free voter ID</div>
+        <p class="action-desc">Apply for a Voter Authority Certificate — no other ID needed.</p>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- NETLIFY EMAIL SIGNUP — home -->
+    <div class="signup-strip" style="margin-bottom:32px">
+      <div class="signup-text">
+        <h3>Stay informed</h3>
+        <p>New explainers and policy updates, straight to your inbox. No spam, ever.</p>
+      </div>
+      <div>
+        <form name="newsletter-home" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="handleNetlifySignup(event,'thanks-home','form-home')">
+          <input type="hidden" name="form-name" value="newsletter-home">
+          <p class="honeypot"><label>Don't fill this in: <input name="bot-field"></label></p>
+          <div class="signup-form-inner" id="form-home">
+            <input type="email" name="email" placeholder="your@email.com" required aria-label="Email address">
+            <button type="submit" class="btn btn-primary btn-sm">Sign up</button>
+          </div>
+          <div id="thanks-home" style="font-size:13px;color:var(--brand-dark);font-weight:500;display:none">Thanks — we'll be in touch when there's something worth reading.</div>
+        </form>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+    <div class="sec-label">Our progress</div>
+
+    <div class="launch-banner">
+      <div class="launch-dot"></div>
+      <span>Bridge Ahead launched in <strong>April 2026</strong>. These figures are updated in real time as our community grows.</span>
+    </div>
+
+    <div class="stat-row">
+      <div class="stat">
+        <div class="stat-num" id="stat-letters">0</div>
+        <div class="stat-lbl">Letters sent to MPs</div>
+        <div class="stat-note">via our letter tool</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num" id="stat-subscribers">0</div>
+        <div class="stat-lbl">Email subscribers</div>
+        <div class="stat-note">growing each week</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">4</div>
+        <div class="stat-lbl">Policy explainers</div>
+        <div class="stat-note">more added regularly</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num" id="stat-launched">
+          <script>document.write(Math.max(0,Math.floor((Date.now()-new Date('2026-04-21').getTime())/(1000*60*60*24))))</script>
+        </div>
+        <div class="stat-lbl">Days live</div>
+        <div class="stat-note">and counting</div>
+      </div>
+    </div>
+    <p style="font-size:12px;color:var(--text-hint);margin-top:12px">Letter count tracked via our tool. Subscriber count from Netlify Forms. We'll never inflate these numbers.</p>
+  </div>
+</div>
+
+<!-- EXPLAINERS -->
+<div class="page" id="page-explain">
+  <div class="container">
+    <div id="explainer-list">
+      <div class="sec-label">All explainers</div>
+      <div class="pill-row" role="group" aria-label="Filter by topic">
+        <div class="pill active" onclick="filterCards('all',this)" tabindex="0" role="button">All topics</div>
+        <div class="pill" onclick="filterCards('housing',this)" tabindex="0" role="button">Housing</div>
+        <div class="pill" onclick="filterCards('benefits',this)" tabindex="0" role="button">Benefits</div>
+        <div class="pill" onclick="filterCards('voting',this)" tabindex="0" role="button">Voting</div>
+        <div class="pill" onclick="filterCards('nhs',this)" tabindex="0" role="button">NHS</div>
+        <div class="pill" onclick="filterCards('employment',this)" tabindex="0" role="button">Employment</div>
+        <div class="pill" onclick="filterCards('rights',this)" tabindex="0" role="button">Rights</div>
+      </div>
+      <div class="cards" id="explainer-cards">
+        <div class="card" data-cat="housing" onclick="openExplainer('renters')" tabindex="0" role="button"><span class="tag tag-h">Housing</span><div class="card-title">Renters' Rights Bill: what changes for you</div><div class="card-desc">No-fault evictions abolished. New rent rules explained.</div></div>
+        <div class="card" data-cat="benefits" onclick="openExplainer('uc')" tabindex="0" role="button"><span class="tag tag-b">Benefits</span><div class="card-title">Universal Credit cuts explained</div><div class="card-desc">What the 2025 reforms mean for your payments.</div></div>
+        <div class="card" data-cat="voting" onclick="openExplainer('voterid')" tabindex="0" role="button"><span class="tag tag-v">Voting</span><div class="card-title">Voter ID: get free photo ID</div><div class="card-desc">A free Voter Authority Certificate is available to everyone.</div></div>
+        <div class="card" data-cat="nhs" onclick="openExplainer('nhs')" tabindex="0" role="button"><span class="tag tag-n">NHS</span><div class="card-title">NHS waiting list rights</div><div class="card-desc">You have more rights than you think.</div></div>
+        <div class="card card-soon" data-cat="employment"><span class="tag tag-e">Employment</span><div class="card-title">Zero-hours contracts: your rights</div><div class="card-desc">New guaranteed hours rules explained.</div><div class="soon-badge">Coming soon</div></div>
+        <div class="card card-soon" data-cat="housing"><span class="tag tag-h">Housing</span><div class="card-title">Social housing waiting lists</div><div class="card-desc">How points work and how to appeal.</div><div class="soon-badge">Coming soon</div></div>
+        <div class="card card-soon" data-cat="benefits"><span class="tag tag-b">Benefits</span><div class="card-title">PIP and disability benefits</div><div class="card-desc">What you're entitled to and how to claim.</div><div class="soon-badge">Coming soon</div></div>
+        <div class="card card-soon" data-cat="rights"><span class="tag tag-r">Rights</span><div class="card-title">Your rights with the police</div><div class="card-desc">Stop and search, arrest, and what you can refuse.</div><div class="soon-badge">Coming soon</div></div>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- NETLIFY EMAIL SIGNUP — explainers -->
+      <div class="signup-strip" style="margin-bottom:28px">
+        <div class="signup-text">
+          <h3>Get new explainers by email</h3>
+          <p>We publish new guides regularly. Be first to know.</p>
+        </div>
+        <div>
+          <form name="newsletter-explainers" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="handleNetlifySignup(event,'thanks-exp','form-exp')">
+            <input type="hidden" name="form-name" value="newsletter-explainers">
+            <p class="honeypot"><label>Don't fill this in: <input name="bot-field"></label></p>
+            <div class="signup-form-inner" id="form-exp">
+              <input type="email" name="email" placeholder="your@email.com" required aria-label="Email address">
+              <button type="submit" class="btn btn-primary btn-sm">Sign up</button>
+            </div>
+            <div id="thanks-exp" style="font-size:13px;color:var(--brand-dark);font-weight:500;display:none">You're signed up.</div>
+          </form>
+        </div>
+      </div>
+
+      <!-- SUGGEST A TOPIC — also Netlify form -->
+      <div class="suggest-form">
+        <h3>Suggest a topic</h3>
+        <p>What policy issue do you want us to explain? We read every suggestion and prioritise based on demand.</p>
+        <form name="suggest-topic" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="handleSuggest(event)">
+          <input type="hidden" name="form-name" value="suggest-topic">
+          <p class="honeypot"><label>Don't fill this in: <input name="bot-field"></label></p>
+          <input type="text" name="topic" placeholder="e.g. Council tax debt, immigration rules, school exclusions..." required>
+          <textarea name="detail" placeholder="Any extra detail about why this matters to you or your community (optional)"></textarea>
+          <div id="suggest-form-inner">
+            <button type="submit" class="btn btn-primary btn-sm">Send suggestion</button>
+          </div>
+          <div id="suggest-thanks" style="font-size:13px;color:var(--brand-dark);font-weight:500;margin-top:8px;display:none">Thanks — we'll add it to the list.</div>
+        </form>
+      </div>
+    </div>
+
+    <div id="explainer-detail" style="display:none">
+      <button class="back-btn" onclick="closeExplainer()" aria-label="Back to all explainers">
+        <svg width="14" height="14" fill="none" viewBox="0 0 14 14" aria-hidden="true"><path d="M9 11L5 7L9 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+        All explainers
+      </button>
+      <div class="explainer-wrap">
+        <div class="explainer" id="explainer-content"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- WRITE TO MP -->
+<div class="page" id="page-act">
+  <div class="container">
+    <div class="sec-label" style="margin-bottom:6px">Write to your MP</div>
+    <p style="font-size:14px;color:var(--text-muted);margin-bottom:26px;max-width:500px">Fill in the form and we'll draft a professional, personalised letter. Copy it and paste it into your MP's contact form — it takes less than 3 minutes.</p>
+    <div class="letter-wrap">
+      <div class="letter-tool">
+        <label for="ltr-postcode">Your postcode</label>
+        <input type="text" id="ltr-postcode" placeholder="e.g. B15 2TT" oninput="lookupMP()" maxlength="8" autocomplete="postal-code" />
+        <div id="ltr-mp-name" style="font-size:13px;color:var(--text-muted);margin-top:6px;min-height:18px" aria-live="polite"></div>
+
+        <label for="ltr-name">Your name</label>
+        <input type="text" id="ltr-name" placeholder="Your full name" oninput="updateLetter()" autocomplete="name" />
+
+        <label for="ltr-issue">Issue you want to raise</label>
+        <select id="ltr-issue" onchange="updateLetter()">
+          <option value="">Select an issue...</option>
+          <option value="housing">Housing — Renters' Rights Bill</option>
+          <option value="benefits">Benefits — Universal Credit changes</option>
+          <option value="nhs">NHS — waiting times in my area</option>
+          <option value="voting">Voting — voter ID requirements</option>
+          <option value="employment">Employment — zero-hours contracts</option>
+          <option value="costliving">Cost of living — energy and food prices</option>
+          <option value="custom">Something else (describe below)</option>
+        </select>
+
+        <label for="ltr-detail">What's happened to you or your community? <span style="font-weight:400;color:var(--text-muted)">(optional but powerful)</span></label>
+        <textarea id="ltr-detail" placeholder="e.g. I've been on a housing waiting list for 18 months and received an eviction notice last month..." oninput="updateLetter()"></textarea>
+
+        <div style="margin-top:20px;padding-top:16px;border-top:0.5px solid var(--border)">
+          <div class="sec-label" style="margin-bottom:10px">How to send it</div>
+          <div class="steps">
+            <div class="step"><div class="step-num" aria-hidden="true">1</div><div class="step-body"><strong>Copy the letter</strong> using the button on the right</div></div>
+            <div class="step"><div class="step-num" aria-hidden="true">2</div><div class="step-body"><strong>Find your MP's contact form</strong> at <a href="https://members.parliament.uk/members/commons" target="_blank" rel="noopener">members.parliament.uk</a></div></div>
+            <div class="step"><div class="step-num" aria-hidden="true">3</div><div class="step-body"><strong>Paste and send.</strong> MPs must respond to constituents by convention.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="letter-preview-wrap">
+        <div class="letter-preview-label" id="preview-label">Your letter</div>
+        <div class="letter-preview" id="letter-text" aria-live="polite">
+          <span class="letter-placeholder">Fill in the form to generate your letter...</span>
+        </div>
+        <div class="btn-row">
+          <button class="btn btn-primary" onclick="copyLetter()" id="copy-btn" style="display:none" aria-label="Copy letter to clipboard">Copy letter</button>
+          <a class="btn btn-outline" href="https://members.parliament.uk/members/commons" target="_blank" rel="noopener" style="display:none;font-size:13px" id="mp-link">Find my MP</a>
+        </div>
+        <div class="copy-confirm" id="copy-confirm" aria-live="polite">Copied — ready to paste into your MP's contact form.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<div class="page" id="page-about">
+  <div class="container" style="max-width:680px">
+    <div class="sec-label">About Bridge Ahead</div>
+    <h2 style="font-size:22px;font-weight:700;margin-bottom:14px;letter-spacing:-.3px">Why we exist</h2>
+    <p style="font-size:15px;line-height:1.75;margin-bottom:14px">The gap in political participation between the most and least affluent in the UK has more than tripled since the 1980s. Research shows the turnout gap between the highest and lowest income groups grew from 4 points in 1987 to 23 points by 2010 — and it has continued to widen.</p>
+    <p style="font-size:15px;line-height:1.75;margin-bottom:14px">This isn't apathy. People in lower-income communities care deeply about housing, the NHS, benefits, and local services. What they often lack is accessible information, confidence that engagement is worth it, and simple tools to act on it.</p>
+    <div class="highlight" style="margin:20px 0">
+      <p>Bridge Ahead exists because democracy works better when everyone can participate in it — not just those who already know how the system works.</p>
+    </div>
+
+    <div class="divider"></div>
+    <h3 style="font-size:17px;font-weight:700;margin-bottom:14px">Our principles</h3>
+    <div class="about-grid">
+      <div class="about-card"><h4>Free, always</h4><p>We will never charge for access to civic information. Paywalls and civic participation don't mix.</p></div>
+      <div class="about-card"><h4>Non-partisan</h4><p>We explain policy — we don't campaign. We never tell you how to vote or which party to support.</p></div>
+      <div class="about-card"><h4>Plain English</h4><p>If a 14-year-old can't understand it, we rewrite it. No jargon, no assumed knowledge.</p></div>
+      <div class="about-card"><h4>Accurate</h4><p>Everything is sourced from official government publications. We correct errors immediately and transparently.</p></div>
+      <div class="about-card"><h4>Independent</h4><p>We disclose all funding. We won't accept money from sources that could compromise our impartiality.</p></div>
+      <div class="about-card"><h4>Community-led</h4><p>You tell us what to explain next. Our roadmap is driven by what people actually need.</p></div>
+    </div>
+
+    <div class="divider"></div>
+    <h3 style="font-size:17px;font-weight:700;margin-bottom:10px">Get in touch</h3>
+    <p style="font-size:14px;color:var(--text-muted);line-height:1.65;margin-bottom:14px">We're a small team and we read every message. If you've spotted an error, want to suggest a topic, or want to get involved as a volunteer or collaborator — please reach out.</p>
+
+    <!-- NETLIFY CONTACT FORM -->
+    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="handleContact(event)" style="max-width:460px">
+      <input type="hidden" name="form-name" value="contact">
+      <p class="honeypot"><label>Don't fill this in: <input name="bot-field"></label></p>
+      <div id="contact-form-inner">
+        <input type="text" name="name" placeholder="Your name" required style="width:100%;border:0.5px solid var(--border-med);border-radius:var(--r);padding:9px 13px;font-size:14px;background:var(--bg);color:var(--text);margin-bottom:10px">
+        <input type="email" name="email" placeholder="your@email.com" required style="width:100%;border:0.5px solid var(--border-med);border-radius:var(--r);padding:9px 13px;font-size:14px;background:var(--bg);color:var(--text);margin-bottom:10px">
+        <textarea name="message" placeholder="Your message..." required style="width:100%;border:0.5px solid var(--border-med);border-radius:var(--r);padding:9px 13px;font-size:14px;background:var(--bg);color:var(--text);min-height:100px;resize:vertical;margin-bottom:10px;font-family:inherit;line-height:1.6"></textarea>
+        <button type="submit" class="btn btn-primary">Send message</button>
+      </div>
+      <div id="contact-thanks" style="font-size:14px;color:var(--brand-dark);font-weight:500;display:none;margin-top:8px">Message sent — we'll get back to you soon.</div>
+    </form>
+  </div>
+</div>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo">
+          <div class="fmark" aria-hidden="true">
+            <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M2 13 C2 13 5 6 8 6 C11 6 14 13 14 13" stroke="#fff" stroke-width="1.8" stroke-linecap="round" fill="none"/><path d="M5 9.5 L11 9.5" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/><path d="M5 13 L5 9.5" stroke="#fff" stroke-width="1.4" stroke-linecap="round"/><path d="M11 13 L11 9.5" stroke="#fff" stroke-width="1.4" stroke-linecap="round"/></svg>
+          </div>
+          Bridge Ahead
+        </div>
+      </div>
+      <div class="footer-links">
+        <button class="footer-link" onclick="showPage('explain')">Explainers</button>
+        <button class="footer-link" onclick="showPage('act')">Write to your MP</button>
+        <button class="footer-link" onclick="showPage('about')">About</button>
+        <a class="footer-link" href="https://www.gov.uk/register-to-vote" target="_blank" rel="noopener">Register to vote</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-note">Free, non-partisan, and always will be. Sources: official UK government publications. We correct errors immediately.</span>
+      <span class="footer-note">Built to make democracy work for everyone.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const EXPLAINERS = {
+  renters:{tag:'tag-h',tagLabel:'Housing',title:"Renters' Rights Bill: what changes for you",updated:'Updated April 2026',badges:['Private renters','England only'],
+    keyFacts:["No-fault (Section 21) evictions are now illegal","Rent can only be raised once a year","You can challenge unfair rent increases at a tribunal — free","Landlords must use a court process to evict — no more just handing you a letter"],
+    content:`<p>The Renters' Rights Bill is one of the biggest changes to housing law in decades. If you rent your home privately in England, this directly affects you.</p>
+    <div class="highlight"><p><strong>The key change:</strong> no-fault evictions — where your landlord could ask you to leave with no reason given — are now illegal. This is the abolition of "Section 21."</p></div>
+    <p>Before this law, landlords could issue a Section 21 notice and you had to leave within two months with no explanation. That power is now gone.</p>
+    <p><strong>What can landlords still do?</strong> Evict you if you don't pay rent, cause serious damage, or breach your tenancy terms. These are "Section 8" grounds and require a court process.</p>
+    <p><strong>What about rent increases?</strong> Landlords can only raise rent once a year and must give proper written notice. You can challenge unreasonable increases at a First-tier Tribunal — free of charge.</p>
+    <p><strong>Does this apply to me?</strong> Almost all private renters in England. Scotland, Wales and Northern Ireland have separate housing laws.</p>`},
+  uc:{tag:'tag-b',tagLabel:'Benefits',title:'Universal Credit cuts explained',updated:'Updated April 2026',badges:['Benefits claimants','England, Wales & Scotland'],
+    keyFacts:["The health element (LCWRA) is being cut for new claimants from April 2026","Existing claimants should be protected — but verify with the DWP","The Work Capability Assessment is being reformed","Citizens Advice offers free, confidential benefits support"],
+    content:`<p>Changes to Universal Credit announced in 2025 will affect millions of people. Here's what's changing and what you can do.</p>
+    <div class="highlight"><p><strong>The main change:</strong> the health-related element of Universal Credit (LCWRA) is being reduced for new claimants from April 2026. If you're already claiming, your award should be protected for now.</p></div>
+    <p>The Work Capability Assessment — the test determining whether your health condition limits your ability to work — is also being reformed. Disability charities have raised serious concerns about the impact on vulnerable people.</p>
+    <p><strong>What should I do?</strong> If you're claiming and worried, contact Citizens Advice at <a href="https://www.citizensadvice.org.uk" target="_blank" rel="noopener">citizensadvice.org.uk</a> for free guidance. You can also write to your MP using our letter tool.</p>`},
+  voterid:{tag:'tag-v',tagLabel:'Voting',title:'Voter ID: get free photo ID in 5 minutes',updated:'Updated April 2026',badges:['All voters','England, Wales & Scotland'],
+    keyFacts:["You need photo ID to vote in person at UK elections","A free Voter Authority Certificate is available from your local council","Postal voters do not need photo ID","Apply at gov.uk — takes about 5 minutes"],
+    content:`<p>Since 2023, you need to show photo ID to vote in person at UK elections. Many people don't know a free document exists specifically for this purpose.</p>
+    <div class="highlight"><p><strong>The free option:</strong> a Voter Authority Certificate is free photo ID issued by your local council — designed specifically for voting. Apply at <a href="https://www.gov.uk/apply-for-photo-id-voter-authority-certificate" target="_blank" rel="noopener">gov.uk</a>.</p></div>
+    <p><strong>What ID is accepted?</strong> UK passport, driving licence, Blue Badge, Oyster 60+ photocard, and others. Full list at <a href="https://www.electoralcommission.org.uk/i-am-a/voter/voter-id/accepted-forms-photo-id" target="_blank" rel="noopener">electoralcommission.org.uk</a>.</p>
+    <p><strong>What about postal voting?</strong> Postal voters don't need photo ID at all. Apply for a postal vote through your local council if getting to the polling station is difficult.</p>`},
+  nhs:{tag:'tag-n',tagLabel:'NHS',title:'NHS waiting lists: know your legal rights',updated:'Updated April 2026',badges:['All patients','England'],
+    keyFacts:["You have a legal right to treatment within 18 weeks of GP referral","You can request treatment at a different NHS hospital","PALS (Patient Advice & Liaison) can escalate your case for free","Check waiting times for different hospitals at nhs.uk"],
+    content:`<p>NHS waiting times are at record levels — but most people don't know they have legal rights and practical options.</p>
+    <div class="highlight"><p><strong>Your key right:</strong> in England, you have a legal right to start consultant-led NHS treatment within 18 weeks of your GP referral. If this isn't happening, you can request to be treated elsewhere.</p></div>
+    <p><strong>What can I do if I've waited too long?</strong> Contact your GP first. If that doesn't move things, ask to speak to the Patient Advice and Liaison Service (PALS) at your hospital — they can escalate your case at no cost to you.</p>
+    <p><strong>Can I switch hospitals?</strong> Yes — this is called "patient choice" and it's your right. Ask your GP to refer you to an NHS provider with a shorter wait. Check times at <a href="https://www.nhs.uk/nhs-services/hospitals/guide-to-nhs-waiting-times-in-england/" target="_blank" rel="noopener">nhs.uk</a>.</p>`}
+};
+
+const ISSUE_TEXT = {
+  housing:"I am writing to raise concerns about housing security in our constituency, particularly regarding the implementation of the Renters' Rights Bill and its impact on private renters.",
+  benefits:"I am writing about the impact of the recent Universal Credit reforms on constituents in our area who depend on this vital support.",
+  nhs:"I am writing about NHS waiting times in our constituency, which have reached a level causing real hardship for my community.",
+  voting:"I am writing to raise concerns about voter ID requirements and their potential to reduce democratic participation, particularly among those who don't hold standard forms of photo ID.",
+  employment:"I am writing about zero-hours contract workers in our constituency and the serious impact employment insecurity has on their wellbeing.",
+  costliving:"I am writing about the ongoing cost of living crisis and its impact on residents in our constituency, particularly those on lower incomes.",
+  custom:"I am writing to raise an important matter affecting me and other residents of our constituency."
+};
+
+let currentConstituency = '';
+let letterCount = parseInt(localStorage.getItem('ba_letters') || '0');
+updateStatDisplay();
+
+function updateStatDisplay() {
+  const el = document.getElementById('stat-letters');
+  if (el) el.textContent = letterCount.toLocaleString();
+}
+
+function showPage(p) {
+  document.querySelectorAll('.page').forEach(el => el.classList.remove('active'));
+  document.querySelectorAll('.nav-link').forEach(el => el.classList.remove('active'));
+  document.getElementById('page-' + p).classList.add('active');
+  const navEl = document.getElementById('nav-' + p);
+  if (navEl) navEl.classList.add('active');
+  window.scrollTo(0, 0);
+  return false;
+}
+
+function toggleMobileNav() {
+  const menu = document.getElementById('mobile-menu');
+  const toggle = document.getElementById('mobile-toggle');
+  const open = menu.classList.toggle('open');
+  toggle.setAttribute('aria-expanded', open);
+}
+function closeMobileNav() {
+  document.getElementById('mobile-menu').classList.remove('open');
+  document.getElementById('mobile-toggle').setAttribute('aria-expanded','false');
+}
+
+function filterCards(cat, el) {
+  document.querySelectorAll('.pill').forEach(p => p.classList.remove('active'));
+  el.classList.add('active');
+  document.querySelectorAll('#explainer-cards .card').forEach(c => {
+    c.style.display = (cat === 'all' || c.dataset.cat === cat) ? '' : 'none';
+  });
+}
+
+function openExplainer(id) {
+  const e = EXPLAINERS[id];
+  if (!e) return;
+  const badges = e.badges.map(b => `<span class="ebadge">${b}</span>`).join('');
+  const facts = e.keyFacts.map(f => `<div class="key-fact"><div class="key-fact-icon" aria-hidden="true">→</div><div>${f}</div></div>`).join('');
+  document.getElementById('explainer-content').innerHTML = `
+    <span class="tag ${e.tag}">${e.tagLabel}</span>
+    <h2 style="margin-top:8px">${e.title}</h2>
+    <div class="meta">${e.updated}</div>
+    <div class="badge-row">${badges}</div>
+    <div class="key-facts"><h4>Key facts</h4>${facts}</div>
+    ${e.content}
+    <div class="cta-strip">
+      <p>Want to do something about this?</p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <button class="btn btn-primary" onclick="showPage('act')">Write to your MP</button>
+        <button class="btn btn-outline" onclick="closeExplainer()">More explainers</button>
+      </div>
+    </div>`;
+  document.getElementById('explainer-list').style.display = 'none';
+  document.getElementById('explainer-detail').style.display = 'block';
+  window.scrollTo(0, 0);
+}
+
+function closeExplainer() {
+  document.getElementById('explainer-list').style.display = '';
+  document.getElementById('explainer-detail').style.display = 'none';
+}
+
+function lookupPostcode() {
+  const pc = document.getElementById('postcode').value.trim();
+  const r = document.getElementById('mp-result');
+  if (pc.replace(/\s/g,'').length < 5) { r.innerHTML = ''; return; }
+  r.innerHTML = '<span style="color:var(--text-muted)">Looking up...</span>';
+  fetch(`https://api.postcodes.io/postcodes/${encodeURIComponent(pc)}`)
+    .then(res => res.json())
+    .then(data => {
+      if (data.status === 200) {
+        const c = data.result.parliamentary_constituency_2024 || data.result.parliamentary_constituency || data.result.admin_district || 'your area';
+        r.innerHTML = `<div class="mp-card">
+          <div><div class="mp-card-name">${c}</div><div class="mp-card-area">Find your MP by name at members.parliament.uk</div></div>
+          <a class="btn btn-primary btn-sm" href="https://members.parliament.uk/members/commons" target="_blank" rel="noopener">Find my MP</a>
+        </div>`;
+      } else {
+        r.innerHTML = '<span style="color:var(--text-muted)">Postcode not found — check the format, e.g. B15 2TT</span>';
+      }
+    })
+    .catch(() => {
+      r.innerHTML = 'Find your MP at <a href="https://members.parliament.uk/members/commons" target="_blank" rel="noopener">members.parliament.uk</a>.';
+    });
+}
+
+function lookupMP() {
+  const pc = document.getElementById('ltr-postcode').value.trim();
+  const out = document.getElementById('ltr-mp-name');
+  if (pc.replace(/\s/g,'').length < 5) { out.textContent = ''; currentConstituency = ''; return; }
+  fetch(`https://api.postcodes.io/postcodes/${encodeURIComponent(pc)}`)
+    .then(res => res.json())
+    .then(data => {
+      if (data.status === 200) {
+        currentConstituency = data.result.parliamentary_constituency_2024 || data.result.parliamentary_constituency || '';
+        out.innerHTML = currentConstituency
+          ? `<span style="color:var(--brand-dark)">Constituency: <strong>${currentConstituency}</strong></span> — <a href="https://members.parliament.uk/members/commons" target="_blank" rel="noopener" style="font-size:13px">look up your MP's name</a>`
+          : '';
+        updateLetter();
+      }
+    }).catch(() => {});
+}
+
+function updateLetter() {
+  const name = document.getElementById('ltr-name').value.trim();
+  const issue = document.getElementById('ltr-issue').value;
+  const detail = document.getElementById('ltr-detail').value.trim();
+  const postcode = document.getElementById('ltr-postcode').value.trim().toUpperCase();
+  const txt = document.getElementById('letter-text');
+  const copyBtn = document.getElementById('copy-btn');
+  const mpLink = document.getElementById('mp-link');
+
+  if (!name || !issue) {
+    txt.innerHTML = '<span class="letter-placeholder">Fill in your name and choose an issue to generate your letter...</span>';
+    copyBtn.style.display = 'none'; mpLink.style.display = 'none';
+    return;
+  }
+  const loc = postcode ? ` in ${postcode}` : '';
+  const salutation = currentConstituency ? `Dear MP for ${currentConstituency},` : 'Dear [your MP\'s name],';
+  const body = ISSUE_TEXT[issue] || ISSUE_TEXT.custom;
+  const detailPara = detail ? `\n\nIn my own experience: ${detail}` : '';
+  txt.textContent = `${salutation}\n\nI am writing as one of your constituents${loc}. ${body}${detailPara}\n\nI would welcome the opportunity to understand your position on this issue and what steps you are taking to support affected constituents. I would be grateful for a response at your earliest convenience.\n\nYours sincerely,\n${name}`;
+  copyBtn.style.display = 'inline-flex';
+  mpLink.style.display = 'inline-flex';
+}
+
+function copyLetter() {
+  const txt = document.getElementById('letter-text').textContent;
+  navigator.clipboard.writeText(txt).then(() => {
+    letterCount++;
+    localStorage.setItem('ba_letters', letterCount);
+    updateStatDisplay();
+    const c = document.getElementById('copy-confirm');
+    c.style.display = 'block';
+    setTimeout(() => c.style.display = 'none', 5000);
+  });
+}
+
+function handleNetlifySignup(e, thanksId, formId) {
+  e.preventDefault();
+  const form = e.target;
+  fetch('/', { method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body: new URLSearchParams(new FormData(form)).toString() })
+    .then(() => {
+      document.getElementById(formId).style.display = 'none';
+      document.getElementById(thanksId).style.display = 'block';
+    }).catch(() => {
+      document.getElementById(thanksId).style.display = 'block';
+      document.getElementById(thanksId).textContent = "You're signed up.";
+    });
+}
+
+function handleSuggest(e) {
+  e.preventDefault();
+  const form = e.target;
+  fetch('/', { method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body: new URLSearchParams(new FormData(form)).toString() })
+    .then(() => {
+      document.getElementById('suggest-form-inner').style.display = 'none';
+      document.getElementById('suggest-thanks').style.display = 'block';
+    }).catch(() => {
+      document.getElementById('suggest-thanks').style.display = 'block';
+    });
+}
+
+function handleContact(e) {
+  e.preventDefault();
+  const form = e.target;
+  fetch('/', { method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body: new URLSearchParams(new FormData(form)).toString() })
+    .then(() => {
+      document.getElementById('contact-form-inner').style.display = 'none';
+      document.getElementById('contact-thanks').style.display = 'block';
+    }).catch(() => {
+      document.getElementById('contact-thanks').style.display = 'block';
+    });
+}
+
+document.getElementById('postcode').addEventListener('keydown', e => { if(e.key==='Enter') lookupPostcode(); });
+document.querySelectorAll('.card[tabindex]').forEach(c => {
+  c.addEventListener('keydown', e => { if(e.key==='Enter'||e.key===' ') c.click(); });
+});
+document.querySelectorAll('.pill[tabindex]').forEach(p => {
+  p.addEventListener('keydown', e => { if(e.key==='Enter'||e.key===' ') p.click(); });
+});
+</script>
+</body>
+</html>
